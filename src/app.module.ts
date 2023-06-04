@@ -6,6 +6,7 @@ import { DataSource } from 'typeorm';
 import { ItemModule } from './modules/item.module';
 import { Item } from './entities/item.entity';
 import { AuthModule } from './modules/auth.module';
+import { User } from './entities/user.entity';
 
 @Module({
   imports: [
@@ -16,7 +17,7 @@ import { AuthModule } from './modules/auth.module';
       username: 'root',
       password: 'root',
       database: 'unreal_pizza',
-      entities: [Item],
+      entities: [Item, User],
       synchronize: true,
     }),
     ItemModule,

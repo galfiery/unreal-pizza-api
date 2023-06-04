@@ -1,7 +1,7 @@
 /* eslint-disable prettier/prettier */
 import { Controller, Get, Inject, Param, UseGuards } from '@nestjs/common';
-import { Item } from '../../entities/item.entity';
-import { ItemService } from '../../services/item.service';
+import { Item } from '../entities/item.entity';
+import { ItemService } from '../services/item.service';
 import { AuthGuard } from '@nestjs/passport';
 
 @Controller('item')
