@@ -5,6 +5,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { DataSource } from 'typeorm';
 import { ItemModule } from './modules/item.module';
 import { Item } from './entities/item.entity';
+import { AuthModule } from './modules/auth.module';
 
 @Module({
   imports: [
@@ -19,6 +20,7 @@ import { Item } from './entities/item.entity';
       synchronize: true,
     }),
     ItemModule,
+    AuthModule,
   ],
   controllers: [AppController],
   providers: [AppService],
