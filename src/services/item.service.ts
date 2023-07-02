@@ -7,14 +7,14 @@ import { Repository } from 'typeorm';
 export class ItemService {
   constructor(
     @InjectRepository(Item)
-    private itemRepository: Repository<Item>) {
-  }
+    private itemRepository: Repository<Item>,
+  ) {}
 
   findAll(): Promise<Item[]> {
     return this.itemRepository.find();
   }
 
-  findOne(id: number): Promise<Item | null> {
+  findOne(id: number): Promise<Item> {
     return this.itemRepository.findOneBy({ id });
   }
 

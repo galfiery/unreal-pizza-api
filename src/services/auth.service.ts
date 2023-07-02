@@ -14,14 +14,11 @@ export class AuthService {
     return this.jwtService.sign(payload);
   }
 
-  async validateUser(username: string, password: string): Promise<any> {
+  async validateUser(username: string, password: string): Promise<User> {
     const user: User = await this.userService.findByUsername(username);
 
-    if (user && user.password === password) {
-      return user;
-    }
+    if (user?.password === password) return user;
 
     return null;
   }
-
 }

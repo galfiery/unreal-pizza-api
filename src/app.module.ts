@@ -7,6 +7,7 @@ import { ItemModule } from './modules/item.module';
 import { Item } from './entities/item.entity';
 import { AuthModule } from './modules/auth.module';
 import { User } from './entities/user.entity';
+import { DB_NAME, DB_PASSWORD, DB_USERNAME } from './common/global-constants';
 
 @Module({
   imports: [
@@ -14,9 +15,9 @@ import { User } from './entities/user.entity';
       type: 'mysql',
       host: 'localhost',
       port: 3306,
-      username: 'root',
-      password: 'root',
-      database: 'unreal_pizza',
+      username: DB_USERNAME,
+      password: DB_PASSWORD,
+      database: DB_NAME,
       entities: [Item, User],
       synchronize: true,
     }),
