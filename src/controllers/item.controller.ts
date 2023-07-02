@@ -10,8 +10,7 @@ export class ItemController {
   @Get()
   @UseGuards(AuthGuard('jwt'))
   async findAll(): Promise<Item[]> {
-    const list: Item[] = await this.itemService.findAll();
-    return list;
+    return await this.itemService.findAll();
   }
 
   @Get('get-by-category-type/:categoryType')
@@ -19,9 +18,6 @@ export class ItemController {
   async findByCategoryType(
     @Param('categoryType') categoryType: string,
   ): Promise<Item[]> {
-    const list: Item[] = await this.itemService.findByCategoryType(
-      categoryType,
-    );
-    return list;
+    return await this.itemService.findByCategoryType(categoryType);
   }
 }

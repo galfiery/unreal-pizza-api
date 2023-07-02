@@ -23,14 +23,12 @@ export class AuthController {
       secretKey: GlobalConstants.JWT_SECRET,
     });
 
-    const response: LoginReponseDto = new LoginReponseDto({
+    return new LoginReponseDto({
       username: user.username,
       firstName: user.firstName,
       lastName: user.lastName,
       email: user.email,
       token: token,
     });
-
-    return response;
   }
 }
